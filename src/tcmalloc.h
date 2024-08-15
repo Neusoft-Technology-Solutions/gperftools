@@ -54,7 +54,11 @@
 #endif
 
 #if !HAVE_CFREE_SYMBOL
+#ifdef __QNXNTO__
+extern "C" int cfree(void* ptr) __THROW;
+#else
 extern "C" void cfree(void* ptr) __THROW;
+#endif
 #endif
 #if !HAVE_DECL_POSIX_MEMALIGN
 extern "C" int posix_memalign(void** ptr, size_t align, size_t size) __THROW;

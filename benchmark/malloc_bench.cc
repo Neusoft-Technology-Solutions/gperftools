@@ -134,7 +134,7 @@ static void bench_fastpath_memalign(long iterations,
 
 #endif // __GNUC__
 
-#define STACKSZ (1 << 16)
+#define STACKSZ (1 << 16)/2
 
 static void bench_fastpath_stack(long iterations,
                                  uintptr_t _param)
